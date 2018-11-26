@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-infinea" version="0.2">
+    <name>Infinea</name>
+    <description>Infinite Peripherals - ipcmobile.com</description>
+    <license>Apache 2.0</license>
+    <keywords>IPC,scanners</keywords>
+    <repo>https://bitbucket.org/bradipcprint/ipcinfineags1hibc.git</repo>
+    
+    <js-module src="www/IPC-Infinea.js" name="Infinea">
+        <clobbers target="Infinea" />
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Infinea">
+                <param name="ios-package" value="Infinea" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/IPCInfinea.h" />
+        <header-file src="src/ios/DTDevices.h" />
+        <source-file src="src/ios/IPCInfinea.m" />
+        
+        <source-file src="src/ios/libdtdev.a" framework="true" compiler-flags="-fno-objc-arc"/>
+        
+        <framework src="ExternalAccessory.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="MediaPlayer.framework" />
+        
+        <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+          <array>
+    		<string>com.datecs.linea.pro.msr</string>
+    		<string>com.datecs.iserial.communication</string>
+    		<string>com.datecs.pinpad</string>
+    		<string>com.datecs.linea.pro.bar</string>
+    	  </array>
+        </config-file>
+    </platform>
+</plugin>
