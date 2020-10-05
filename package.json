@@ -1,0 +1,17 @@
+{
+  "name": "jnj-lineapro-infinea",
+  "version": "1.0.0",
+  "description": "Infineags1hibc",
+  "cordova": {
+    "id": "cordova-plugin-infinea",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC"
+}
